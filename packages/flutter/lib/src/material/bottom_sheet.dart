@@ -183,7 +183,7 @@ class _BottomSheetState extends State<BottomSheet> {
   Widget build(BuildContext context) {
     final BottomSheetThemeData bottomSheetTheme = Theme.of(context).bottomSheetTheme;
     final Color color = widget.backgroundColor ?? bottomSheetTheme.backgroundColor;
-    final double elevation = widget.elevation ?? bottomSheetTheme.elevation ?? 0;
+    final double elevation = widget.elevation ?? bottomSheetTheme.persistentElevation ?? bottomSheetTheme.elevation ?? 0;
     final ShapeBorder shape = widget.shape ?? bottomSheetTheme.shape;
 
     final Widget bottomSheet = Material(
