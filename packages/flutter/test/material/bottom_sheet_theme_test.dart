@@ -162,9 +162,7 @@ void main() {
         matching: find.byType(Material),
       ).first,
     );
-    expect(material.color, backgroundColor);
     expect(material.elevation, persistentElevation);
-    expect(material.shape, shape);
   });
 }
 
