@@ -135,20 +135,19 @@ void main() {
 
   testWidgets('BottomSheet persistentElevation takes priority over elevation', (WidgetTester tester) async {
     const Color backgroundColor = Colors.purple;
-    const double elevation = 5.0;
-    const double persistentElevation = 7.0;
     const ShapeBorder shape = RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(9.0)),
     );
+    const persistentElevation = 7.0;
+    const bottomSheetTheme = BottomSheetThemeData(
+      elevation: 5.0,
+      persistentElevation: persistentElevation,
+    );
 
     await tester.pumpWidget(MaterialApp(
-      theme: ThemeData(bottomSheetTheme: _bottomSheetTheme()),
+      theme: ThemeData(bottomSheetTheme: bottomSheetTheme),
       home: Scaffold(
         body: BottomSheet(
-          backgroundColor: backgroundColor,
-          elevation: elevation,
-          persistentElevation: persistentElevation,
-          shape: shape,
           onClosing: () {},
           builder: (BuildContext context) {
             return Container();
